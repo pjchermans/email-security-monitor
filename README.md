@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Email Security Monitor
 
 Een web-applicatie voor het monitoren van email beveiliging van Email-domeinen.
@@ -372,4 +371,3 @@ MIT License - see LICENSE file for details.
 =======
 # email-security-monitor
 email security monitoring tool for Email domains
->>>>>>> 7d4316ae5a7ab99d0646df964e1d8822b5945784
