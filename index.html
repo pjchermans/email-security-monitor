@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Security Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🛡️</div>
+                    <h1>Email Security Monitor</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="status-indicator">
+                        <span class="status-dot active"></span>
+                        <span>Live DNS</span>
+                    </div>
+                    <button id="checkAllBtn" class="btn btn-primary">
+                        <span class="btn-icon">🔄</span>
+                        Controleer Alle
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Overview Mode -->
+            <div id="overviewMode" class="overview-mode">
+                <div class="overview-header">
+                    <h2>Domein Overzicht</h2>
+                    <div class="overview-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Totaal:</span>
+                            <span class="stat-value" id="totalDomains">7</span>
+                        </div>
+                        <div class="stat-item good">
+                            <span class="stat-label">Goed:</span>
+                            <span class="stat-value" id="goodDomains">0</span>
+                        </div>
+                        <div class="stat-item warning">
+                            <span class="stat-label">Waarschuwing:</span>
+                            <span class="stat-value" id="warningDomains">0</span>
+                        </div>
+                        <div class="stat-item error">
+                            <span class="stat-label">Problemen:</span>
+                            <span class="stat-value" id="errorDomains">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-domain-section">
+                    <h3>Nieuw Domein Toevoegen</h3>
+                    <div class="add-domain-form">
+                        <input type="text" id="domainInput" placeholder="example.com" />
+                        <input type="text" id="tagsInput" placeholder="Tags (komma gescheiden)" />
+                        <button id="addDomainBtn" class="btn btn-success">
+                            <span class="btn-icon">➕</span>
+                            Toevoegen
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Instellingen</h3>
+                    <div class="settings-grid">
+                        <div class="settings-item">
+                            <label>
+                                <input type="checkbox" id="autoCheck" checked />
+                                <span>Automatische controle</span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <label>
+                                <span>Interval (minuten):</span>
+                                <input type="number" id="checkInterval" value="60" min="5" max="1440" />
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <label>
+                                <input type="checkbox" id="showNotifications" checked />
+                                <span>Notificaties tonen</span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <button id="exportDataBtn" class="btn btn-secondary">
+                                <span class="btn-icon">📋</span>
+                                Export Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="domains-overview">
+                    <h3>Domeinen</h3>
+                    <div id="domainsOverviewList" class="domains-overview-list">
+                        <!-- Domain overview items will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Mode -->
+            <div id="detailMode" class="detail-mode" style="display: none;">
+                <div class="detail-header">
+                    <button id="backToOverviewBtn" class="btn btn-secondary">
+                        <span class="btn-icon">←</span>
+                        Terug naar Overzicht
+                    </button>
+                    <h2 id="detailDomainName">Domein Details</h2>
+                    <button id="checkSingleBtn" class="btn btn-primary">
+                        <span class="btn-icon">🔄</span>
+                        Controleer
+                    </button>
+                </div>
+
+                <div id="domainDetail" class="domain-detail">
+                    <!-- Domain detail content will be inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
