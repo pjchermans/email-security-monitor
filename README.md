@@ -367,7 +367,6 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**Developed with ❤️ for Dutch municipalities and IT professionals**
 =======
 # email-security-monitor
 email security monitoring tool for Email domains
